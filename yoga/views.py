@@ -77,21 +77,31 @@ def blog(request):
 
 
 def addEvent(request):
+
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
         newEvent = Events(
-                 title=request.POST['title'],
-                 text=request.POST['text'],
-                 thumb=uploaded_file_url
-                 )
+                title=request.POST['title'],
+                text=request.POST['text'],
+                thumb=uploaded_file_url
+                )
 
         newEvent.save()
         return redirect('blog')
     else:
-        return render(request, 'yoga/add_event.html')
+        if request.method == 'POST':
+            newEvent = Events(
+                    title=request.POST['title'],
+                    text=request.POST['text']
+                    )
+
+            newEvent.save()
+            return redirect('blog')
+        else:
+            return render(request, 'yoga/add_event.html')
 
 
 # loged in

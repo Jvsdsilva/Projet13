@@ -4,6 +4,16 @@ from django.contrib.auth.models import AnonymousUser, User
 from yoga.forms import RegistrationForm
 from django.views.generic import TemplateView
 from yoga.models import UploadImage, Events
+import pytest
+import time
+import json
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
 class EntryModelTest(TestCase):
@@ -144,3 +154,60 @@ class TestViews(TestCase):
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'yoga/add_event.html')
+
+
+class TestTestimage():
+    def setup_method(self, method):
+        self.driver = webdriver.Firefox()
+        self.vars = {}
+
+    def teardown_method(self, method):
+        self.driver.quit()
+
+    def test_testimage(self):
+        self.driver.get("http://127.0.0.1:8000/")
+        self.driver.set_window_size(1920, 1040)
+        self.driver.find_element(By.CSS_SELECTOR, ".fas").click()
+        self.driver.find_element(By.ID, "id_username").send_keys("admin")
+        self.driver.find_element(By.ID, "id_password").click()
+        self.driver.find_element(By.ID, "id_password").send_keys("admin1234")
+        self.driver.find_element(By.ID, "login").click()
+        self.driver.find_element(By.ID, "upload").click()
+        self.driver.find_element(By.NAME, "title").click()
+        self.driver.find_element(By.NAME, "title").send_keys("image3")
+        self.driver.find_element(By.NAME, "myfile").click()
+        self.driver.find_element(By.NAME, "myfile").send_keys(
+                                 "C:\\fakepath\\taichi-park.jpg")
+        self.driver.find_element(By.ID, "upload").click()
+        self.driver.find_element(By.CSS_SELECTOR, ".fa-sign-out-alt").click()
+
+
+class TestTestevenements():
+    def setup_method(self, method):
+        self.driver = webdriver.Firefox()
+        self.vars = {}
+
+    def teardown_method(self, method):
+        self.driver.quit()
+
+    def test_testevenements(self):
+        self.driver.get("http://127.0.0.1:8000/")
+        self.driver.set_window_size(1936, 1056)
+        self.driver.find_element(By.CSS_SELECTOR, 
+                                 ".nav-item:nth-child(6) > .nav-link").click()
+        self.driver.find_element(By.ID, "blog").click()
+        self.driver.find_element(By.NAME, "title").click()
+        self.driver.find_element(By.NAME, "title").send_keys(
+                                "Sortie Plantes Médicinales")
+        self.driver.find_element(By.NAME, "text").click()
+        self.driver.find_element(By.NAME, "text").click()
+        self.driver.find_element(By.NAME, "text").send_keys(
+                                "Venez nombreux pour cette sortie en plein " +
+                                "nature. Venez connaitre le meilleur de " +
+                                "nos plantes. Cette sortie ce déroulera " +
+                                "le 27 mars. Plus d’informations veuillez " +
+                                "contacter Joana au contact@yoga.fr")
+        self.driver.find_element(By.NAME, "myfile").click()
+        self.driver.find_element(By.NAME, "myfile").send_keys(
+                                "C:\\fakepath\\images.jpg")
+        self.driver.find_element(By.ID, "ajouter").click()
