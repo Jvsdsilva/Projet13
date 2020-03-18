@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
-    'yoga.apps.YogaConfig',
+    'yoga.apps.yogaConfig',
     'crispy_forms',
 ]
 

@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class YogaConfig(AppConfig):
+class yogaConfig(AppConfig):
     name = 'yoga'

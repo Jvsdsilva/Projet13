@@ -193,7 +193,7 @@ class TestTestevenements():
     def test_testevenements(self):
         self.driver.get("http://127.0.0.1:8000/")
         self.driver.set_window_size(1936, 1056)
-        self.driver.find_element(By.CSS_SELECTOR, 
+        self.driver.find_element(By.CSS_SELECTOR,
                                  ".nav-item:nth-child(6) > .nav-link").click()
         self.driver.find_element(By.ID, "blog").click()
         self.driver.find_element(By.NAME, "title").click()
