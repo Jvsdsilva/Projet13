@@ -1,0 +1,30 @@
+{% extends 'yoga/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- Masthead -->
+<div class="bg-faded p-4 my-4 text-justify">
+  <hr class="divider">
+  <h2 class="text-center text-lg text-uppercase my-0">Connectez-vous!
+  </h2>
+  <hr class="divider ">
+  <div class="flex-container">
+    <form class = "signin" method="POST">
+        {% csrf_token %}
+        {{ form | crispy}}
+      <a class="nav-link js-scroll-trigger" href="{% url 'index'%}">
+        <button id= "login" type="submit" class="btn btn-primary">Entrée</button>
+      </a>
+      <a href="{% url 'password_reset' %}" class="btn btn-link">Oubliez votre mot de passe?</a>
+    </form>
+    <form class = "signin">
+        <div class="form-group">
+          <medium id="create" class="form-text text-muted">Vous n'avez pas de compte?</medium>
+        </div>
+        <a class="nav-link js-scroll-trigger" href="{% url 'signup'%}">
+          <button id = "new" type="button" class="btn btn-primary">Nouveau compte</button>
+        </a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

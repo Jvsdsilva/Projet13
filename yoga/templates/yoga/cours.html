@@ -1,0 +1,134 @@
+{% extends 'yoga/base.html' %}
+
+{% block content %}
+<div class="bg-faded p-4 my-4 text-justify">
+	<hr class="divider">
+	<h2 class="text-center text-lg text-uppercase my-0">Lieux, Horaires et tarification
+	</h2>
+	<hr class="divider">
+	<p><strong>Pas de cours pendant les vacances scolaires</strong></p>
+	<div class="text-center">
+		<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FParis&amp;src=NzJhaGdicmVnYWU1NjZiNzQ1N3JpaWN2ZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=cHQtcHQuZnJlbmNoI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=aHQzamxmYWFjNWxmZDYyNjN1bGZoNHRxbDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23AD1457&amp;color=%230B8043&amp;color=%23B39DDB&amp;showNav=1&amp;showDate=1&amp;showPrint=0&amp;showTabs=1&amp;showCalendars=1&amp;mode=WEEK" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+	</div>
+	<!-- <table  class="table table-bordered text-center" style="text-align:center;">
+		<thead class="thead-default">
+			<tr>
+				<th align="center">Lundi</th>
+				<th class="col-md-2.4">Mardi</th>
+				<th class="col-md-2.4">Mercredi</th>
+				<th class="col-md-2.4">Jeudi</th>
+				<th class="col-md-2.4">Vendredi</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr id="row1">
+				<td class="color-default" style="width: 90px;height:140px;">
+					<p></p>
+					<p></p>
+					<p></p>
+				</td>
+				<td class="color-default" style="width: 90px;height:140px;">
+					<p></p>
+					<p></p>
+					<p></p>
+				</td>
+				<td class="color-default" style="width: 90px;height:140px;">
+					<p></p>
+					<p></p>
+					<p></p>
+				</td>
+				<td class="color-default" style="width: 90px;height:140px;">
+					<p></p>
+					<p></p>
+					<p></p>
+				</td>
+				<td class="color-default" style="width: 90px;height:140px;">
+					<p></p>
+					<p></p>
+					<p></p>
+				</td>
+			</tr>
+			<tr id="row2">
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+				<td class="color-default" style="width: 90px;height:140px;"></td>	
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+				<td class="color-GymYoga" style="width: 90px;height:140px;background-color:#009900;">
+					<p> Gym-Yoga </p>
+					<p><strong> Ideal-Tonic (Gaillac)*</strong></p>
+					<p>11h00 - 11h45</p>
+				</td>
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+			</tr>
+			<tr id="row3">
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+				<td class="color-GiGong" style="width: 90px;height:140px;background-color:#ff5c33;">
+					<p> Gi-Gong </p>
+					<p><strong> Ideal-Tonic (Gaillac)*</strong></p>
+					<p>18h15 - 19h00</p>
+				</td>
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+			</tr>
+			<tr id="row4">
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+				<td class="color-GymYoga" style="width: 90px;height:140px;background-color:#009900;">
+					<p> Gym-Yoga </p>
+					<p><strong> Nang-fah (Vieux)**</strong></p>
+					<p>19h30 - 20h30</p>
+				</td>
+				<td class="color-GiGong" style="width: 90px;height:140px;background-color:#ff5c33;">
+					<p> Gi-Gong </p>
+					<p><strong> Nang-fah (Vieux)**</strong></p>
+					<p>18h15 - 19h00</p>
+				</td>
+				<td class="color-GymYoga" style="width: 90px;height:140px;background-color:#009900;">
+					<p> Gym-Yoga </p>
+					<p><strong> Mille et une danses*</strong></p>
+					<p>18h30 - 19h30</p>
+				</td>
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+			</tr>
+			<tr id="row5">
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+				<td class="color-GymYoga" style="width: 90px;height:140px;background-color:#009900;">
+					<p> Gym-Yoga </p>
+					<p><strong> Ideal-Tonic (Gaillac)*</strong></p>
+					<p>19h30 - 20h15</p>
+				</td>
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+				<td class="color-default" style="width: 90px;height:140px;"></td>
+			</tr>
+			</tbody>
+	</table> -->
+	<div class="sites">
+		<p><strong><span style="color:#ff5c33;"> *Idéal-Tonic :</span></strong> <a href="https://www.ideal-tonic.fr" target="_blank">www.ideal-tonic.fr</a> Tel: 05 63 58 57 64 </p>
+		<p><strong><span style="color:#009900;"> *Aux 1001 danses :</span></strong> <a href="https://aux1001danses.jimdo.com" target="_blank">www.aux1001danses.jimdo.com</a> Tel:06 85 13 76 60 </p>
+		<p><strong><span style="color:#4da6ff;"> *Nang-Fah:</span></strong> <a href="https://www.nangfah.com" target="_blank">www.nangfah.com</a> Tel: 06 18 25 90 85 </p>
+		<p>** A Vieux, il n'y aura pas de cours pendant 2 mois - Janvier et Février 2020 </p>
+	</div>
+</div>
+<div class="bg-faded p-4 my-4 text-justify">
+	<hr class="divider">
+	<h2 class="text-center text-lg text-uppercase my-0">Tarification
+	</h2>
+	<hr class="divider">
+		<p>Veuillez vous référer aux renseignements indiqués ci-dessus en allant soit à la réception directement ou
+		soit en appelant directement aux numéros de téléphone indiqués ci-dessous.</p>
+		<p>
+		Idéal- Tonic :  05 63 58 57 64 <br/>
+		Aux Mille et une danses : 06 85 13 76 60<br/>
+		Nang Fah : 06 18 25 90 85</p>
+		​
+		<p>Le collectif à l’unité a 8 €/hrpersonne (en attente pour la salle)</p>
+		<p>Le cours individuel à 30€/h/personne (sur rendez-vous)</p>
+		<p>Il est conseillé d’amener son tapis de Yoga.</p>
+		
+		<p>
+		Pour les cours individuelles la tarification peut varier en fonction du déplacement à effectuer pour donner ce cours.</p>
+		<p>Cotisation annuelle pour adhérer à l'association pour une personne physique ou morale : 5€ </p> 
+		<p>Reduction 5% pour les habitants de Vieux et pour les couples. Possibilité de cumuler les deux.</p>	
+	</div>
+</div>
+{% endblock %}

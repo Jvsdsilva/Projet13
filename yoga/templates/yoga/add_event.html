@@ -1,0 +1,22 @@
+{% extends 'yoga/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="bg-faded p-4 my-4">
+  <form class="text-center" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form | crispy}}
+    <div class="form-group">
+      <input class="text-center" type="title" name="title" placeholder="Title"> <br>
+    </div>
+    <div class="form-group">
+      <textarea class="text-center" type="textarea" name="text" placeholder="Text"></textarea><br>
+    </div>
+    <div class="form-group">
+      <input class="text-center" type="file" name="myfile" placeholder="Image"> <br>
+    </div>
+    <div class="form-group">
+      <button id="ajouter" type="submit" class="btn btn-primary">Ajouter</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

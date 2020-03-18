@@ -1,0 +1,76 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    height: -webkit-fill-available;
+    }
+    .prefix{
+    margin-right: 10px;
+    }
+    @media (max-width: 600px) {
+    .flex-container {
+      flex-direction: column;
+      padding-bottom: 50px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+    .flex-container p {
+      font-size: 1.15rem;
+    }
+    .flex-container h1 {
+      font-size: 3rem;
+      align-items: center;
+    }
+    }
+    
+    @media (min-width: 992px) {
+    .flex-container {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .flex-container p {
+      font-size: 1.15rem;
+    }
+    .flex-container h1 {
+      font-size: 3rem;
+    }
+    }
+    
+    @media (min-width: 1200px) {
+    .flex-container h1 {
+      font-size: 3.5rem;
+    }
+    }
+
+    .signin{
+        margin-bottom: 10px;
+        color: #ba4a00;
+    }
+
+    #login {
+      color: #ba4a00;
+    }
+
+    #new {
+      color: #ba4a00;
+    }
+
+    #create {
+      color: #ba4a00;
+    }
+  
+    td .color-GymYoga {
+      background-color:#ff5c33;
+    }
+    
+    td .color-GiGong {
+      background-color:#009900;
+    }

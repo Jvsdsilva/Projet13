@@ -1,0 +1,69 @@
+{% extends 'yoga/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+  <div class="bg-faded p-4 my-4">
+    <!-- Image Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <img class="d-block img-fluid w-100" src="{% static 'img/default.jpg' %}" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h3 class="text-shadow">Yoga</h3>
+          </div>
+        </div>
+        {% for images in uploads %}
+          <div class="carousel-item">
+            {% if images.thumb %}
+              <img class="d-block img-fluid w-100" src="{{images.thumb}}" alt="{{images.title}}">
+              <div class="carousel-caption d-none d-md-block">
+                <h3 class="text-shadow">{{images.title}}</h3>
+              </div>
+            {% else %}
+              <img class="d-block img-fluid w-100" src="{% static 'img/P1010401.jpg' %}">
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a> 
+    </div>
+  </div>
+  {% if user.is_authenticated %}
+    <a class="nav-link js-scroll-trigger" href="{% url 'upload' %}">
+      <button id="upload" type="submit" class="btn btn-primary">Ajouter</button>
+    </a>
+  {% endif %}
+
+  <div class="bg-faded p-4 my-4">
+    <hr class="divider">
+    <h2 class="text-center text-lg text-uppercase my-0">Introduction
+    </h2>
+    <hr class="divider">
+    <!--https://fr.wikipedia.org/wiki/Hatha_yoga-->
+    <p>Haṭha yoga, est une forme particulière de yoga qui vient de l'Inde sous l'impulsion du texte Haṭha Yoga Pradīpikā 
+      attribué au yogi Svatmarama et des Yoga Upanishad tardives, avant d'atteindre, au XXe siècle, l'Occident. </p>
+      <p>Il signifie « yoga d'effort » et concerne principalement l'éveil spirituel par les postures correctes (āsana), 
+      la discipline du souffle (prāṇāyāma)1 et la méditation (dhyāna).</p> 
+      </p>Aujourd'hui, il constitue une pratique sous des formes diverses s'appuyant sur le travail corporel et l'attitude mentale 
+      correspondante et fait aussi l'objet d'un commerce dans le monde du développement personnel et du marché du bien-être.</p>
+      <p>Avant toute pratique de sport il vous sera demandé de compléter une déclaration et le formulaire sur votre  "ETAT DE SANTE GENERAL". </p>
+      <p>Certaines conditions de santé ne vous permettront pas de suivre de cours de Yoga. D’autres conditions de santé nécessiteront un certificat médical de la part de votre médecin traitant afin de suivre ce cours de Yoga.
+      </p>
+  </div>
+
+{% endblock %}
+
