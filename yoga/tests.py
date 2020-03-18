@@ -200,7 +200,6 @@ class TestTestevenements():
         self.driver.find_element(By.NAME, "title").send_keys(
                                 "Sortie Plantes Médicinales")
         self.driver.find_element(By.NAME, "text").click()
-        self.driver.find_element(By.NAME, "text").click()
         self.driver.find_element(By.NAME, "text").send_keys(
                                 "Venez nombreux pour cette sortie en plein " +
                                 "nature. Venez connaitre le meilleur de " +
