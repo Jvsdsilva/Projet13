@@ -100,6 +100,7 @@ class TestViews(TestCase):
         response = self.client.post(self.logout)
 
         self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'yoga/index.html')
 
     def test_signup_POST(self):
         response = self.client.post(self.signup)
@@ -156,6 +157,7 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'yoga/add_event.html')
 
 
+@pytest.mark.usefixtures('driver')
 class TestTestimage():
     def setup_method(self, method):
         self.driver = webdriver.Firefox()
@@ -182,6 +184,7 @@ class TestTestimage():
         self.driver.find_element(By.CSS_SELECTOR, ".fa-sign-out-alt").click()
 
 
+@pytest.mark.usefixtures('driver')
 class TestTestevenements():
     def setup_method(self, method):
         self.driver = webdriver.Firefox()
