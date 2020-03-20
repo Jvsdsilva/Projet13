@@ -16,6 +16,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
+# Models test
 class EntryModelTest(TestCase):
 
     def test_UploadImage(self):
@@ -157,6 +158,7 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'yoga/add_event.html')
 
 
+# selenium test uploads
 @pytest.mark.usefixtures('driver')
 class TestTestimage():
     def setup_method(self, method):
