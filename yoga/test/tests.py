@@ -4,16 +4,6 @@ from django.contrib.auth.models import AnonymousUser, User
 from yoga.forms import RegistrationForm
 from django.views.generic import TemplateView
 from yoga.models import UploadImage, Events
-import pytest
-import time
-import json
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
 # Models test
