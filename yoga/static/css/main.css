@@ -79,3 +79,12 @@
       width:auto;
       height:auto;
     }
+
+/* calendar */
+  .embed-responsive-10by3 {
+    padding-top: 30%;
+ }
+
+ #calendar{
+   padding: 10px;
+ }
